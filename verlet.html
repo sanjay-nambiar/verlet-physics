@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Verlet Magic</title>
+</head>
+<body>
+	<div style="position: absolute; top: 50px; left: 50px;">
+		<canvas id="theCanvas" width="800" height="600">
+			Your browser does not support HTM5 Canvas.
+		</canvas>
+	</div>
+
+	<script type="text/javascript" src="js/Logger.js"></script>
+	<script type="text/javascript" src="js/Physics.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript">
+		// Entry point
+		function eventWindowLoaded() {
+			logger = new Logger(console, JSON);
+			physicsManager = createPhysics(logger);
+			intializeCanvasApp(physicsManager, logger);
+		}
+		window.addEventListener("load", eventWindowLoaded, false);
+	</script>
+
+</body>
+</html>
